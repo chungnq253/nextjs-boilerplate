@@ -1,0 +1,17 @@
+$headerHeight: 56px;
+$footerHeight: 56px;
+$fontFamily: "Poppins", Helvetica, sans-serif, monospace;
+$fontSize: 16px;
+$fontWeight: 400;
+$fontWeightBold: 500;
+$fontStyleDefault: normal;
+
+:root {
+  --font-family: #{$fontFamily};
+  --font-weight: #{$fontWeight};
+  --font-weight-bold: #{$fontWeightBold};
+  --font-size: #{$fontSize};
+  --font-style: #{$fontStyleDefault};
+
+  
+}

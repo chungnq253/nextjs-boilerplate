@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@templates/*": [
+        "templates/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@configs/*": [
+        "configs/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

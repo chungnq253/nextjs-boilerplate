@@ -1,0 +1,41 @@
+* {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1rem;
+  background-color: var(--color-primary-white);
+  color: var(--primary-text-color);
+
+  @include media-breakpoint-down(sm) {
+    &.modal-open {
+      pointer-events: none;
+    }
+  }
+}
+
+main {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &.custom {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+button {
+  border: none;
+  background-color: none;
+  background: none;
+}

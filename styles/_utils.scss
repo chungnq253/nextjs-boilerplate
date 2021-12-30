@@ -1,0 +1,85 @@
+@mixin scrollbars($width, $height, $thumbColor: #c4c4c4, $trackColor: #ecebeb) {
+  overflow-y: auto;
+
+  @include media-breakpoint-up(md) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: $thumbColor;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $trackColor;
+    }
+
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $thumbColor;
+      scrollbar-track-color: $trackColor;
+    }
+  }
+}
+
+@mixin text-truncate($line: 0) {
+  @if ($line == 0) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  } @else {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc( #{$height} / #{$width} * 100%)
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin hover-effect {
+  & {
+    @include media-breakpoint-up(md) {
+      &:hover,
+      &:focus,
+      &:active {
+        @content;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      &:focus,
+      &:active {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin fill-full-height {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  // min-height: fill-available;
+}
